@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My personal library</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+    <body>
+        <header class="header">
+            <h1>My Personal library</h1>
+            <nav>
+                <div>
+                    <button id="addButton">+ ADD BOOK</button>
+                </div>
+            </nav>
+        </header>
+        <main class="main container">
+            <div class="shelf" id="readShelf">
+                <h2>Read</h2>
+                <div class="books-grid" id="readBooksGrid"></div>
+            </div>
+            <div class="shelf" id="unreadShelf">
+                <h2>Not read yet</h2>
+                <div class="books-grid" id="unreadBooksGrid"></div>
+            </div>
+        </main>
+        <footer class="footer">
+            <p>
+                Copyright © 
+                <script>
+                    document.write(new Date().getFullYear()) // Script for update year automatically
+                </script> 
+                Alan Nahuel
+            </p> 
+            <a href="###">
+                <i class="fab fa-github"></i
+            </a>
+        </footer>
+        <div class="book-form-modal" id="bookFormModal">
+            <div class="book-form-container">
+                <h2>Añadir libro</h2>
+                <form id="bookForm">
+                    <div class="form-group">
+                        <label for="title">Book Title:</label>
+                        <input type="text" id="title" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="author">Author:</label>
+                        <input type="text" id="author" name="author" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pages">Number of pages:</label>
+                        <input type="number" id="pages" name="pages" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="read" id="readLabel">Read?</label>
+                        <input type="checkbox" id="read" name="read">
+                    </div>
+                    <div class="form-group">
+                        <label for="bookImage" class="custom-file-upload">
+                            Upload Image
+                        </label>
+                        <input type="file" id="bookImage" name="bookImage" accept="image/*" style="display: none;">
+                        <span id="fileName"></span>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">Save</button>
+                        <button type="button" id="closeFormBtn">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

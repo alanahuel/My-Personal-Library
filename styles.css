@@ -1,0 +1,301 @@
+html{
+    /* footer support */
+    position: relative;
+    min-height: 100%;
+    font-family: 'Roboto Slab', serif;
+}
+body {
+    margin: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #fdfdfd;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header h1 {
+    font-size:4lvh;
+    text-transform: uppercase;
+}
+nav div {
+    padding: 0.5rem;
+}
+
+.main {
+    background-color: #ffffff;
+    padding: 1rem;
+}
+
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+.footer{
+    background-color: #ffffff;
+    text-align: center;
+}
+
+#addButton {
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    outline:none;
+    background-color: #fbfbfb;
+    font-family: 'Roboto Slab', serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover{
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+button:active {
+    background-color: #004080; 
+    transform: scale(0.95); 
+}
+
+button:disabled {
+    background-color: #c0c0c0; 
+    cursor: not-allowed; 
+}
+
+/* Estilo del modal */
+.book-form-modal {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    z-index: 1000; /* Asegurarse de que aparezca por encima de otros elementos */
+    display: flex; /* Centrar el contenedor del formulario */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo del contenedor del formulario */
+.book-form-container {
+    background-color: #fff;
+    width: 80%;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo de los grupos de formulario */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Estilo para las etiquetas */
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+}
+
+/* Estilo para los inputs */
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="file"] {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+/* Efecto al enfocar los inputs */
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* Estilo para el checkbox */
+.form-group input[type="checkbox"], #readLabel {
+    margin-right: 10px;
+    display: inline;
+}
+
+/* Estilo para los botones */
+.form-group button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Roboto Slab', serif;
+    transition: background-color 0.3s;
+}
+
+.form-group button:hover {
+    background-color: #0056b3;
+}
+
+.form-group button[type="button"] {
+    background-color: #ccc;
+    margin-left: 10px;
+}
+
+.form-group button[type="button"]:hover {
+    background-color: #aaa;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f4f4f4;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.custom-file-upload:hover {
+    background-color: #e0e0e0;
+}
+
+/* Estilo para mostrar el nombre del archivo seleccionado */
+#fileName {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.shelf {
+    margin-bottom: 40px;
+}
+
+.shelf h2 {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.with-image {
+    display: grid;
+    grid-template-rows: 3fr 2fr 0.6fr;
+    width: 12rem;
+    height: 22rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.without-image {
+    display: grid;
+    grid-template-rows: 3fr 0.4fr;
+    width: 12rem;
+    height: 22rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.book:hover {
+    transform: scale(1.05);
+}
+
+.book-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    z-index: 1;
+}
+
+.book-info{
+    margin: 0;
+    padding: 0;
+    background-color: #c0fafc12;
+    width: 100%;
+    height: 100;
+}
+
+.book h3 {
+    font-size: x-large;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    overflow: hidden; /* Oculta el contenido que desborde */
+    text-overflow: ellipsis; /* Añade puntos suspensivos al final si el contenido desborda */
+    white-space: nowrap; /* Evita que el texto se ajuste a la siguiente línea */
+    max-width: 90%; /* Establece un ancho máximo para el contenido */
+    margin: auto; /* Centra el contenido horizontalmente */
+}
+
+.book p {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    text-transform: capitalize;
+    overflow: hidden; /* Oculta el contenido que desborde */
+    text-overflow: ellipsis; /* Añade puntos suspensivos al final si el contenido desborda */
+    white-space: nowrap; /* Evita que el texto se ajuste a la siguiente línea */
+    max-width: 90%; /* Establece un ancho máximo para el contenido */
+    margin: auto; /* Centra el contenido horizontalmente */
+}
+
+.without-image h3{
+    font-size: xx-large;
+    overflow: hidden; /* Oculta el contenido que desborde */
+    text-overflow: ellipsis; /* Añade puntos suspensivos al final si el contenido desborda */
+    white-space: nowrap; /* Evita que el texto se ajuste a la siguiente línea */
+    max-width: 90%; /* Establece un ancho máximo para el contenido */
+    margin: auto; /* Centra el contenido horizontalmente */
+
+}
+.without-image p {
+    margin: 0;
+    font-size: x-large;
+    overflow: hidden; /* Oculta el contenido que desborde */
+    text-overflow: ellipsis; /* Añade puntos suspensivos al final si el contenido desborda */
+    white-space: nowrap; /* Evita que el texto se ajuste a la siguiente línea */
+    max-width: 90%; /* Establece un ancho máximo para el contenido */
+    margin: auto; /* Centra el contenido horizontalmente */
+}
+
+.deleteButton {
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparente */
+    color: white;
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    border-radius: 5px;
+    opacity: 0.5; /* Lo hacemos semi-transparente */
+}
+
+.deleteButton:hover {
+    background-color: red;
+    transform: translatey(-2%) scale(1.03); /* Lo hacemos un poco más grande y lo mantenemos centrado */
+    opacity: 1; /* Lo hacemos completamente visible */
+}
