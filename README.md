@@ -22,9 +22,9 @@ Open index.html in your web browser
 Use the "+ ADD BOOK" button to add new books to your library
 
 ## Technologies Used
-HTML
-CSS
-JavaScript
+- HTML
+- CSS
+- JavaScript
 
 ## License
 This project is open source and available under the MIT License.
