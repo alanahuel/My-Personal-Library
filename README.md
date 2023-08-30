@@ -4,7 +4,7 @@
 This project is a simple yet functional personal library application built with HTML, CSS, and JavaScript. It allows users to add books to their library, mark them as read or unread, and even delete them. The project is part of the JavaScript course from [The Odin Project](https://www.theodinproject.com/) .
 
 ## Live Demo
-[Click here to see the project live](alanahuel.github.io) 
+[Click here to see the project live](https://alanahuel.github.io/My-Personal-Library/) 
 
 ## Features
 - Add new books to your library
